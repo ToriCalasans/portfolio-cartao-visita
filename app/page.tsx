@@ -1,4 +1,5 @@
-import ThemeToggle from "./ThemeToggle"
+import ThemeToggle from "./ThemeToggle";
+import Image from "next/image";
 import {
   Linkedin,
   Github,
@@ -11,8 +12,15 @@ export default function Page() {
   return (
     <main className="container">
       <div className="card">
-        <ThemeToggle/>
-        <div className="avatar-placeholder" />
+        <ThemeToggle />
+        <div className="avatar">
+          <Image
+            src="/avatar.jpg"
+            alt="Tori Calasans"
+            width={120}
+            height={120}
+          />
+        </div>
 
         <h1 className="name">Tori Calasans</h1>
         <h2 className="role">Desenvolvedora Front-End</h2>
