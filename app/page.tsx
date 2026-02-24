@@ -15,7 +15,7 @@ export default function Page() {
         <ThemeToggle />
         <div className="avatar">
           <Image
-            src="/avatar.jpg"
+            src="/avatar.png"
             alt="Tori Calasans"
             width={120}
             height={120}
