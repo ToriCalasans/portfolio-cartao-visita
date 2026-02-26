@@ -1,3 +1,5 @@
+"use client";
+import { useEffect, useState } from "react";
 import ThemeToggle from "./ThemeToggle";
 import Image from "next/image";
 import {
@@ -8,7 +10,29 @@ import {
   Sparkles,
   BrainCircuit,
 } from "lucide-react";
+
 export default function Page() {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
+  if (loading) {
+    return <LoadingScreen />;
+  }
+  function LoadingScreen() {
+    return (
+      <div className="loading-screen">
+        <img src="/tori_run.png" alt="Carregando" />
+        <div className="loading-bar">
+          <div className="loading-progress" />
+        </div>
+        <p>Carregando universo...</p>
+      </div>
+    );
+  }
   return (
     <main className="container">
       <div className="card">
